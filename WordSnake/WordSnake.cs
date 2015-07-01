@@ -29,6 +29,23 @@ namespace WordSnake
             Console.Write("\n");
         }
 
+        private void PrintHorizontalBackwards(String input)
+        {
+            int difference = cursorIndex - input.Length;
+            if (difference < 0)
+            {
+                PrintHorizontal(input);
+                return;
+            }
+            Console.CursorLeft = difference - 1;
+            input = this.Reverse(input);
+            Console.Write(input);
+            cursorIndex = difference;
+            if (cursorIndex != 0) { cursorIndex--; }
+            Console.Write("\n");
+        }
+
+
         private void PrintVertical(String input)
         {
             for (int i = 0; i < input.Length; i++)
@@ -44,6 +61,14 @@ namespace WordSnake
             }
         }
 
+        public string Reverse(string text)
+        {
+            if (text == null) return null; 
+            char[] array = text.ToCharArray();
+            Array.Reverse(array);
+            return new String(array);
+        }
+
         private void printSnake()
         {
             for(int i=0; i<words.Length; i++)
@@ -56,11 +81,11 @@ namespace WordSnake
                 {
                    if(i==0)
                    {
-                    PrintHorizontal(words[i]);
+                       PrintHorizontalBackwards(words[i]);
                    }
                    else
                    {
-                        PrintHorizontal(words[i].Substring(1,words[i].Length -1 ));
+                       PrintHorizontalBackwards(words[i].Substring(1, words[i].Length - 1));
                    }
                 }
                 vPrint = !vPrint;
