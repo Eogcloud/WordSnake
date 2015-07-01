@@ -1,6 +1,6 @@
-(Reddit Thread)[https://www.reddit.com/r/dailyprogrammer/comments/3bi5na/20150629_challenge_221_easy_word_snake/]
+[ Reddit Thread ](https://www.reddit.com/r/dailyprogrammer/comments/3bi5na/20150629_challenge_221_easy_word_snake/)
 
-Description
+# Description
 
 A word snake is (unsurprisingly) a snake made up of a sequence of words.
 For instance, take this sequence of words:
