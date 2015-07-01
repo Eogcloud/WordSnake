@@ -61,7 +61,7 @@ namespace WordSnake
             }
         }
 
-        public string Reverse(string text)
+        private string Reverse(string text)
         {
             if (text == null) return null; 
             char[] array = text.ToCharArray();
